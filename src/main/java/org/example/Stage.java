@@ -9,7 +9,7 @@ public abstract class Stage implements StageControl{
     String dateStart;
     String dateFinish;
     String description;
-    StageStatus status;
+    StageStatus status = StageStatus.PLANNED;
     Stage nextStage;
     Stage prevStage;
 
