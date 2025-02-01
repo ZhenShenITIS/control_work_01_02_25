@@ -14,14 +14,22 @@ public class Main {
         }
         double percent = (successCount/(double)n)*100;
         System.out.println("Вероятность успешного завершения: " + percent + " процентов");
-
+        System.out.println();
         testInvalidDateFormat();
     }
 
     private static void testInvalidDateFormat() {
-        System.out.println("Тестирование неверного формата даты:");
+        System.out.println("Тестирование неверного формата даты окончания:");
         try {
             Stage testStage = new Project(10000, "32.01.2021", "100.01.2021", "Тестовый проект");
+        } catch (InvalidDateFormatException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println();
+
+        System.out.println("Тестирование неверного формата даты начала:");
+        try {
+            Stage testStage = new Project(10000, "320.01.2021", "10.01.2021", "Тестовый проект");
         } catch (InvalidDateFormatException e) {
             System.out.println(e.getMessage());
         }
